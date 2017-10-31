@@ -16,6 +16,7 @@ data/
 # Project files #
 ###################
 .idea
+.env
 cmake-build-debug/
 cmake-build-release/
 build-debug/
@@ -26,6 +27,8 @@ test_out/
 # Auto-gen backups #
 ###################
 *~
+*.~*#
+.ipynb_checkpoints/
 
 # Packages #
 ############
