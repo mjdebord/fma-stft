@@ -1,0 +1,10 @@
+audioread==2.1.5
+librosa==0.5.1
+pydub==0.20.0
+scipy==1.0.0
+pydot==1.2.3
+requests==2.18.4
+pandas==0.21.0
+matplotlib==2.1.0
+numpy==1.13.3
+python-dotenv==0.7.1

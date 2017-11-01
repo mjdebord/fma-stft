@@ -12,9 +12,11 @@
 # Data files #
 ###################
 data/
+*.mp3
 
 # Project files #
 ###################
+_testing.py
 .idea
 .env
 cmake-build-debug/
