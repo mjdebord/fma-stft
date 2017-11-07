@@ -59,7 +59,7 @@ def overlap(X, window_size, window_step):
     nw = (valid) // ss
     out = np.ndarray((nw, ws), dtype=a.dtype)
 
-    for i in xrange(nw):
+    for i in range(nw):
         # "slide" the window along the samples
         start = i * ss
         stop = start + ws
@@ -249,7 +249,7 @@ def xcorr_offset(x1, x2):
 
 def make_mel(spectrogram, mel_filter, shorten_factor=1):
     mel_spec = np.transpose(mel_filter).dot(np.transpose(spectrogram))
-    mel_spec = scipy.ndimage.zoom(mel_spec.astype('float32'), [1, 1. / shorten_factor]).astype('float16')
+    mel_spec = scipy.ndimage.zoom(mel_spec.astype('float32'), [1.0, 1.0 / shorten_factor]).astype('float32')
     mel_spec = mel_spec[:, 1:-1]  # a little hacky but seemingly needed for clipping
     return mel_spec
 
@@ -260,7 +260,7 @@ def mel_to_spectrogram(mel_spec, mel_inversion_filter, spec_thresh, shorten_fact
     """
     mel_spec = (mel_spec + spec_thresh)
     uncompressed_spec = np.transpose(np.transpose(mel_spec).dot(mel_inversion_filter))
-    uncompressed_spec = scipy.ndimage.zoom(uncompressed_spec.astype('float32'), [1, shorten_factor]).astype('float16')
+    uncompressed_spec = scipy.ndimage.zoom(uncompressed_spec.astype('float32'), [1, shorten_factor]).astype('float32')
     uncompressed_spec = uncompressed_spec - 4
     return uncompressed_spec
 
