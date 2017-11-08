@@ -1,28 +1,33 @@
 # FMA-STFT (WIP)
 
-This contains ipynb(s) that have some minimal examples on how to use Free Music Archive data.
+This contains ipynb(s) that have some minimal examples on how to use Free Music Archive data to create
+spectrogram and mel-spectroram datasets.
 
-Check out these references for more information and other more complicated examples:
+Check out these references for more information on FMA and other more complicated FMA database examples:
 [paper]:     https://arxiv.org/abs/1612.01840
 [FMA]:       https://freemusicarchive.org
 [github]:    https://github.com/mdeff/fma
 
 ## Contents
-This repo currently has a ipynb that shows how to:
+This repo currently has 2 ipynbs.
+
+Spectro-Datasets:
+* Example on how to use all the functions here to create a spectrogram and mel-spectrogram dataset
+
+fma-spectrograms: 
 * Retrieve genre-specific songs from the fma_metadata files
-* Compute STFTs on songs using scipy
+* Compute STFTs / Spectrograms on songs
 * Display STFT information
 * Invert STFTs back into waveforms
 * Export waveforms back into .mp3 files
-* Create Mel-scale spectrograms and invert those back into waveforms (wip)
+* Create Mel-scale spectrograms and invert those back into waveforms
 
-This information is a bit redundant given the official fma github page, but it offers
-simplified/alternative examples that could be useful for learning.
+fma-spectrograms is a bit redundant given the official fma github page, but it offers
+alternative examples using different audio processing tools that could be useful for learning. 
 
-The heavy lifting was already done by authors of the FMA paper. Check out 
-the listed github page for many more FMA utilities and links to larger FMA datasets.
 
-The included utils.py in the fma subtree is from the listed github source at tags/rc1
+fma_utils.py in 'tools' is from 'utils.py' in the [FMA] github source at tags/rc1
+audio_utils.py in 'tools' is a slightly modified compilation of utilities from [Tim Sainburg](https://timsainb.github.io/spectrograms-mfccs-and-inversion-in-python.html)
 
 ## Usage
 This repo has been tested on Ubuntu 16.04 with python 3.6
@@ -62,7 +67,7 @@ This repo has been tested on Ubuntu 16.04 with python 3.6
 	METADATA_DIR=/path/to/unzipped/metadata
 	```
 
-6. Open Jupyter and run fma-stft.ipynb
+6. Open Jupyter and run fma-spectrograms.ipynb
 	```sh
 	jupyter notebook
 	```
@@ -72,9 +77,16 @@ This repo has been tested on Ubuntu 16.04 with python 3.6
 [ffmpeg]:     https://ffmpeg.org/download.html
 [graphviz]:   http://www.graphviz.org/
 
-## FMA License & co
+## Credits / Liscenc
+
+### Dataset utilities / ipynb examples
+Me. Please feel free to use any of my code for any non-sinister purpose
+
+### Audio processing utilities:
+https://timsainb.github.io/spectrograms-mfccs-and-inversion-in-python.html
+
+### FMA utilities:
 This is directly from https://github.com/mdeff/fma
-Please feel free to use any of my additional code for any non-sinister purpose
 
 * Please cite our [paper] if you use our code or data.
 * The code in this repository is released under the terms of the
